@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Людмила Забровская](https://up.htmlacademy.ru/javascript-individual/1/user/1512023).
-* Наставник: `Неизвестно`.
+* Наставник: `Rail Sakhaviev`.
 
 ---
 
