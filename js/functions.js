@@ -28,6 +28,24 @@ function compareLength (someInput = '', maxLength = 1) {
   return someInput.length <= maxLength;
 }
 
+function completeStringAtBegin (someInput = '', maxLength = 1, additionalSymbols = '') {
+  if (someInput.length >= maxLength) {
+    return someInput;
+  }
+  const lengthToAdd = maxLength - someInput.length;
+  if (additionalSymbols.length === lengthToAdd) {
+    return additionalSymbols + someInput;
+  }
+  if (additionalSymbols.length > lengthToAdd) {
+    const difference = additionalSymbols.length - lengthToAdd;
+    console.log(difference);
+    console.log(additionalSymbols.slice(0,difference - 1));
+    return additionalSymbols.slice(0, additionalSymbols.length - difference) + someInput;
+  }
+
+}
+
 isPalindrome();
 extractNumbers();
 compareLength();
+completeStringAtBegin();
