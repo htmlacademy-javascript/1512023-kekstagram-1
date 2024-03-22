@@ -24,6 +24,10 @@ function extractNumbers (someInput = ''){
   return result;
 }
 
+function compareLength (someInput = '', maxLength = 1) {
+  return someInput.length <= maxLength;
+}
+
 isPalindrome();
 extractNumbers();
-
+compareLength();
