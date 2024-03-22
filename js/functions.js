@@ -7,4 +7,19 @@ function isPalindrome (testableString = ''){
   return (invertedString === testableString);
 }
 
-isPalindrome('топот');
+function extractNumbers (someInput = ''){
+  let tempResult = '';
+  let result = 0;
+
+  for (let i = 0; i <= someInput.toString().length - 1; i++){
+    if(!Number.isNaN(parseInt(someInput[i],10))){
+      tempResult += parseInt(someInput[i],10);
+    }
+  }
+  result = parseInt(tempResult,10);
+  return result;
+}
+
+isPalindrome();
+extractNumbers();
+
