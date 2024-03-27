@@ -20,9 +20,7 @@ const extractNumbersSecond = (input) => {
   return parseInt(input, 10);
 };
 
-function compareLength (someInput = '', maxLength = 1) {
-  return someInput.length <= maxLength;
-}
+const compareLength = (string, maxLength) => String(string).length <= maxLength;
 
 function completeStringAtBegin (someInput = '', maxLength = 1, additionalSymbols = '') {
 
