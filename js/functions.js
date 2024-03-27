@@ -1,24 +1,24 @@
 const isPalindrome = (string) => {
-  string = string.toLowerCase().split('');
+  string = String(string).toLowerCase().replace(/\s/g,'').split('');
   return string.join('') === string.reverse().join('');
 };
 
-function extractNumbers (someInput = ''){
-
-  if(!Number.isNaN(someInput)){
-    someInput = someInput.toString();
+const extractNumbers = (input) => {
+  if(!String(input).match(/\d/)){
+    return NaN;
   }
-  let tempResult = '';
-  let result = 0;
 
-  for (let i = 0; i <= someInput.length - 1; i++){
-    if(!Number.isNaN(parseInt(someInput[i],10))){
-      tempResult += parseInt(someInput[i],10);
-    }
+  if(typeof(input) === 'number') {
+    return Math.abs(input);
   }
-  result = parseInt(tempResult,10);
-  return result;
-}
+  input = input.replace(/\D/g, '');
+  return Number(input);
+};
+
+const extractNumbersSecond = (input) => {
+  input = String(input).replace(/\D/g, '');
+  return parseInt(input, 10);
+};
 
 function compareLength (someInput = '', maxLength = 1) {
   return someInput.length <= maxLength;
@@ -67,3 +67,4 @@ isPalindrome();
 extractNumbers();
 compareLength();
 completeStringAtBegin();
+extractNumbersSecond();
