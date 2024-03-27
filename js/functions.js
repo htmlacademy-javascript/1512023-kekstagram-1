@@ -22,47 +22,24 @@ const extractNumbersSecond = (input) => {
 
 const compareLength = (string, maxLength) => String(string).length <= maxLength;
 
-function completeStringAtBegin (someInput = '', maxLength = 1, additionalSymbols = '') {
-
-  const lengthToAdd = maxLength - someInput.length;
-
-  if (someInput.length >= maxLength) {
-    return someInput;
+const padStart = (string, length, template) => {
+  string = String(string);
+  template = String(template);
+  if (string.length >= length) {
+    return string;
   }
 
-  if (additionalSymbols.length === lengthToAdd) {
-    return additionalSymbols + someInput;
-  }
-
-  if (additionalSymbols.length > lengthToAdd) {
-
-    const difference = additionalSymbols.length - lengthToAdd;
-
-    return additionalSymbols.slice(0, additionalSymbols.length - difference) + someInput;
-  }
-
-  if (additionalSymbols.length < lengthToAdd) {
-
-    if(!(lengthToAdd % additionalSymbols.length)){
-      return (additionalSymbols).repeat(lengthToAdd) + someInput;
+  while (string.length < length) {
+    if (string.length + template.length > length) {
+      return template.slice(0, Math.abs(string.length - length)) + string;
     }
-
-    let partialStr = '';
-    const repeatIntegerTimes = lengthToAdd / additionalSymbols.length;
-    const repeatRestIndexes = lengthToAdd % additionalSymbols.length;
-
-    for (let i = 0; i <= repeatRestIndexes - 1; i++){
-      partialStr += additionalSymbols[i];
-    }
-
-    return partialStr + (additionalSymbols).repeat(repeatIntegerTimes) + someInput;
-
+    string = template + string;
   }
-
-}
+  return string;
+};
 
 isPalindrome();
 extractNumbers();
 compareLength();
-completeStringAtBegin();
+padStart();
 extractNumbersSecond();
