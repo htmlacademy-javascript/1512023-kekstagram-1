@@ -68,7 +68,7 @@ const getIdUrl = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getIdForDescription = createIdGenerator(PHOTO_ID_MIN,PHOTO_ID_MAX);
 const getCommentsID = createRandomIdFromRangeGenerator(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX);
 
-const createComments = () => ({
+const createComment = () => ({
   id: getCommentsID(),
   avatar: `img/avatar-${getRandomInteger(AVATAR_ID_MIN,AVATAR_ID_MAX)}.svg`,
   message: getRandomArrayElement(MESSAGE_SOURCE),
@@ -80,7 +80,7 @@ const createPhotoDescription = () => ({
   url: `photos/${getIdUrl()}.jpg`,
   description: `The description of the photo Nr.${getIdForDescription()}.`,
   likes: getRandomInteger(LIKES_MIN, LIKES_MAX),
-  comments: Array.from({length:getRandomInteger(COMMENTS_COUNT_MIN,COMMENTS_COUNT_MAX)}, createComments),
+  comments: Array.from({length:getRandomInteger(COMMENTS_COUNT_MIN,COMMENTS_COUNT_MAX)}, createComment),
 });
 
 const photoDescriptions = Array.from({length: DESCRIPTIONS_COUNT}, createPhotoDescription);
