@@ -17,7 +17,7 @@ const messages = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
-const NAMES = [
+const names = [
   'Вася',
   'Коля',
   'Петя',
@@ -72,7 +72,7 @@ const createComment = () => ({
   id: getCommentsID(),
   avatar: `img/avatar-${getRandomInteger(AVATAR_ID_MIN,AVATAR_ID_MAX)}.svg`,
   message: getRandomArrayElement(messages),
-  name: getRandomArrayElement(NAMES),
+  name: getRandomArrayElement(names),
 });
 
 const createPhotoDescription = () => ({
