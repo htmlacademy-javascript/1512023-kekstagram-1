@@ -28,9 +28,8 @@ const names = [
   'Маша'
 ];
 
-const getRandomInteger = (min, max) => {
+const getRandomInteger = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
-};
 
 const createRandomIdFromRangeGenerator = (min, max) => {
   const previousValues = [];
