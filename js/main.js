@@ -83,5 +83,8 @@ const createPhoto = () => ({
   comments: Array.from({length:getRandomInteger(COMMENTS_COUNT_MIN,COMMENTS_COUNT_MAX)}, createComment),
 });
 
-const arrayFromPhotos = Array.from({length: DESCRIPTIONS_COUNT}, createPhoto);
+
+const photos = Array.from({length: DESCRIPTIONS_COUNT}, createPhoto);
+//eslint-disable-next-line no-console;
+//console.log(arrayFromPhotos);
 
