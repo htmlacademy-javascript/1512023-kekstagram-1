@@ -85,6 +85,6 @@ const createPhoto = () => ({
 
 
 const photos = Array.from({length: DESCRIPTIONS_COUNT}, createPhoto);
-//eslint-disable-next-line no-console;
-//console.log(arrayFromPhotos);
+//eslint-disable-next-line no-console
+console.log(photos);
 
