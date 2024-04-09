@@ -8,7 +8,7 @@ const DESCRIPTIONS_COUNT = 25;
 const AVATAR_ID_MIN = 1;
 const AVATAR_ID_MAX = 6;
 
-const MESSAGE_SOURCE = [
+const messages = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -71,7 +71,7 @@ const getCommentsID = createRandomIdFromRangeGenerator(COMMENTS_COUNT_MIN, COMME
 const createComment = () => ({
   id: getCommentsID(),
   avatar: `img/avatar-${getRandomInteger(AVATAR_ID_MIN,AVATAR_ID_MAX)}.svg`,
-  message: getRandomArrayElement(MESSAGE_SOURCE),
+  message: getRandomArrayElement(messages),
   name: getRandomArrayElement(NAMES),
 });
 
