@@ -1,4 +1,3 @@
-//import {photos} from './create-photos.js';
 const thumbnailsContainer = document.querySelector('.pictures');
 const thumbnailTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
