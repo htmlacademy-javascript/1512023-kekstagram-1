@@ -1,3 +1,8 @@
-import {photos} from './create-photos.js';
-import {createThumbnailList} from './create-thumbnails-list.js';
-createThumbnailList(photos);
+import {createPhotos} from './create-photos.js';
+import {renderThumbnails} from './create-thumbnails-list.js';
+
+const PHOTOS_COUNT = 25;
+
+const photos = createPhotos(PHOTOS_COUNT);
+
+renderThumbnails(photos);
