@@ -1,4 +1,8 @@
-import {photos} from './create-photos.js';
-//eslint-disable-next-line no-console
-console.log(photos);
+import {createPhotos} from './create-photos.js';
+import {renderThumbnails} from './create-thumbnails-list.js';
 
+const PHOTOS_COUNT = 25;
+
+const photos = createPhotos(PHOTOS_COUNT);
+
+renderThumbnails(photos);
